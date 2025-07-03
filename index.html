@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>CSS Test 1: Basic Layout</title>
+</head>
+
+<!---
+
+INSTRUCTIONS
+
+Goal:
+You are to recreate the visual shown in the goal.png graphic.
+
+Test Rules:
+You are NOT allowed to search online for help.
+Everyone who has provided an AI produced solution has failed this test.
+You are expected to produce a solution good enough to be used on live website.
+We work with external design agencies. They expect the websites we build to look exactly like their designs.
+
+Note:
+Whilst CSS would normally be stored in a seperate stylesheet, for the sake of simplicity during these tests you should include it in the style section below.
+
+-->
+
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    body {
+        min-height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .content {
+        --max-width: 1440px;
+        --content-padding: 1rem;
+
+        width: min(calc(100% - var(--content-padding) * 2), 1440px);
+        margin-inline: auto;
+    }
+
+    .layout--block {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .layout--left {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .layout--left img {
+        aspect-ratio: 1;
+        width: 600px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+    .layout--right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .layout--textarea {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .layout--textarea > *:not(ul, li) {
+        margin-left: -1.5rem;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 2.3rem;
+        position: relative;
+    }
+    h1::before {
+        content: '';
+        width: 4rem;
+        height: 1px;
+        position: absolute;
+        z-index: 1;
+        border: 0;
+        border-bottom: 2px solid oklch(60% 0.118 184.704);
+
+        left: 0;
+        bottom: -0.8rem;
+    }
+    h4 {
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.3rem;
+        padding-block-start: 1.5rem;
+    }
+    
+    ul{
+        padding-left: 1rem;
+    }
+    li {
+        font-size: 1.3rem;
+    }
+    li::marker {
+        color: oklch(60% 0.118 184.704);
+        padding-left: 1rem;
+    }
+    a {
+        text-decoration: none;
+        display: block;
+        padding: 1rem 2rem;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        background-color: oklch(60% 0.118 184.704);
+        width: max-content;
+    }
+
+</style>
+
+<body>
+    <div class="content">
+        <div class="layout--block">
+            <div class="layout--left">
+                <img src="./assets/img1.jpg" class="layout--image">
+            </div>
+            <div class="layout--right">
+                <div class="layout--textarea">
+                    <h4>CSS TEST</h4>
+                    <h1>Test 1: Basic Layout</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>consectetur adipiscing elit</li>
+                        <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</li>
+                        <li>Ut enim ad minim veniam</li>
+                    </ul>
+                    <p><a class="button" href="#">Call to action</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+        
