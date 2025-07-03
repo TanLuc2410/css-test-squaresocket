@@ -53,12 +53,13 @@ Whilst CSS would normally be stored in a seperate stylesheet, for the sake of si
     .layout--block {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
     }
     .layout--left {
         width: 100%;
         height: auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
     }
 
     .layout--left img {
@@ -78,9 +79,6 @@ Whilst CSS would normally be stored in a seperate stylesheet, for the sake of si
         display: flex;
         flex-direction: column;
         gap: 1.2rem;
-    }
-    .layout--textarea > *:not(ul, li) {
-        margin-left: -1.5rem;
     }
 
     h1 {
@@ -110,7 +108,7 @@ Whilst CSS would normally be stored in a seperate stylesheet, for the sake of si
     }
     
     ul{
-        padding-left: 1rem;
+        padding-left: 3rem;
     }
     li {
         font-size: 1.3rem;
